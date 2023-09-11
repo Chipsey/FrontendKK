@@ -60,7 +60,33 @@
   width: 600px;
 }
 
-.contact-content {
+.category-content {
   position: relative;
   left: -150px;
+}
+
+.category-card-heading {
+  position: relative;
+  top: -40px;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  box-shadow: 0 0 100px 20px;
+}
+
+.category-img {
+  position: relative;
+  width: 200px;
+}
+
+.category-card {
+  align-items: center;
+  text-align: center;
+  width: 200px;
+}
+
+.category-cards {
+  position: relative;
+  display: flex;
+  gap: 40px;
 }

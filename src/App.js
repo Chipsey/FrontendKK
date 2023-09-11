@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ContactUs from "./components/ContactUs/ContactUs";
 import ServiceProvider from "./components/Dashboard/ServiceProvider";
 import About from "./components/About/About";
+import Category from "./components/Category/Category";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route exact path="/about" element={<About />} />
           <Route exact path="/contactus" element={<ContactUs />} />
+          <Route exact path="/category" element={<Category />} />
         </Routes>
         <Footer />
       </div>
