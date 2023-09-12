@@ -111,6 +111,16 @@ const ServiceProvider = () => {
         <Card2 heading="Customer" active="card-2" />
         <Card2 heading="Category" active="card-2" />
       </div>
+
+      <div className="service-search-bar">
+        <TextField
+          label="Search Service Providers"
+          variant="outlined"
+          fullWidth
+          value={() => {}}
+          onChange={(e) => {}}
+        />
+      </div>
       <div className="service-table">
         <TableContainer>
           <Table>
