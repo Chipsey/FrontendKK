@@ -30,7 +30,7 @@ const Stat1 = () => {
     <div className="stat1">
       <div className="stat-heading">Favorite Tasks</div>
       <div className="stat-subheading">Based on contracts</div>
-      <div className="doughnut-chart" style={{ height: "300px" }}>
+      <div className="doughnut-chart" style={{ height: "250px" }}>
         <ResponsivePie
           data={data}
           margin={{ top: 40, right: 80, bottom: 20, left: 80 }}

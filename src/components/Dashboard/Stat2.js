@@ -17,7 +17,7 @@ const Stat2 = () => {
       <div className="stat-heading">Statistics</div>
       <div className="stat-subheading">Revenue</div>
       <ResponsiveBar
-        height={300}
+        height={250}
         data={data}
         keys={["value"]}
         indexBy="month"

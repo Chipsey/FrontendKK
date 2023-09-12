@@ -64,3 +64,51 @@
   position: relative;
   left: -150px;
 }
+
+@media screen and (max-width: 1440px) {
+
+  .about-text-wrapper {
+    color: #000000;
+    font-family: roboto;
+    font-size: 66px;
+    margin: 30px 0 20px 0;
+    font-weight: 800;
+    left: 0;
+    width: 100%;
+  }
+
+  .about-text-wrapper2 {
+    color: black;
+    font-family: roboto;
+    font-size: 16px;
+    font-weight: 500;
+    left: 0;
+    line-height: 30px;
+    width: 100%;
+  }
+
+  .label2 {
+    margin-top: 10px;
+  }
+
+  .contactUs-content {
+    position: absolute;
+    left: -100px;
+    top: 100px;
+  }
+
+  .contact-page-image {
+    position: absolute;
+    left: 55%;
+    top: 100%;
+  }
+
+  .contact-page-image img {
+    width: 100px;
+  }
+
+  .contact-content {
+    position: relative;
+    left: -150px;
+  }
+}

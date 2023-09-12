@@ -5,9 +5,6 @@ import "./index.css";
 const Navbar = ({ home, category, contact, about, back_page }) => {
   return (
     <div>
-      <div className="labl">
-        <div className={back_page}>HIREPRO</div>
-      </div>
       <nav>
         <Link to="/">
           <div className="logo">
@@ -23,7 +20,7 @@ const Navbar = ({ home, category, contact, about, back_page }) => {
             <Link to="/category">Category</Link>
             <div className={category}></div>
           </li>
-          <li>
+          <li className="contactUs-link">
             <Link to="/contactus">Contact Us</Link>
             <div className={contact}></div>
           </li>

@@ -14,7 +14,7 @@ const Category = () => {
       <div className="category-content">
         <Text
           align="left"
-          style={{ marginTop: 230, fontWeight: 700, fontSize: "50px" }}
+          style={{ marginTop: 160, marginBottom: 20, fontWeight: 700, fontSize: "40px" }}
         >
           CATEGORY
         </Text>

@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import "./index.css";
 import Card2 from "./Card-2";
 import DashNavbar from "./DashNavbar";
+import { Switch } from "@mui/material";
+
 import {
   Table,
   TableBody,
@@ -11,7 +13,6 @@ import {
   TableHead,
   TableRow,
   TextField,
-  Checkbox,
 } from "@mui/material";
 
 const ServiceProvider = () => {
@@ -20,37 +21,55 @@ const ServiceProvider = () => {
     {
       name: "Yohan Buddhika",
       category: "Plumbing",
-      available: true,
+      restrict: true,
+      complains: "2",
     },
     {
       name: "Senuri Wickramasinghe",
       category: "Gardening",
-      available: false,
+      restrict: false,
+      complains: "2",
     },
     {
       name: "Michelle Fernando",
       category: "Cleaning",
-      available: false,
+      restrict: false,
+      complains: "2",
     },
     {
       name: "Kushantha Alwis",
       category: "Plumbing",
-      available: false,
+      restrict: false,
+      complains: "2",
     },
     {
       name: "Avishka Fernando",
       category: "Lawn Mowing",
-      available: false,
+      restrict: false,
+      complains: "2",
     },
   ]);
 
   // Function to handle changes in the "available" status
   const handleAvailabilityChange = (index) => {
     const updatedServiceProviders = [...serviceProviders];
-    updatedServiceProviders[index].available =
-      !updatedServiceProviders[index].available;
+    updatedServiceProviders[index].restrict =
+      !updatedServiceProviders[index].restrict;
     setServiceProviders(updatedServiceProviders);
   };
+
+  // Define state to store the search query
+  const [searchQuery, setSearchQuery] = useState("");
+
+  // Function to handle changes in the search input
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
+  // Filter service providers based on the search query
+  const filteredServiceProviders = serviceProviders.filter((serviceProvider) =>
+    serviceProvider.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <div className="dashboard">
@@ -117,8 +136,8 @@ const ServiceProvider = () => {
           label="Search Service Providers"
           variant="outlined"
           fullWidth
-          value={() => {}}
-          onChange={(e) => {}}
+          value={searchQuery} // Set the value to the searchQuery state
+          onChange={handleSearchChange} // Handle changes in the search input
         />
       </div>
       <div className="service-table">
@@ -128,8 +147,8 @@ const ServiceProvider = () => {
               <TableRow>
                 <TableCell>Name</TableCell>
                 <TableCell>Category</TableCell>
-                <TableCell>Available</TableCell>
-                <TableCell>On/Off</TableCell>
+                <TableCell>Complains</TableCell>
+                <TableCell>Restrict User</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -138,7 +157,7 @@ const ServiceProvider = () => {
                   <TableCell>
                     <TextField
                       value={serviceProvider.name}
-                      variant="outlined"
+                      variant="standard"
                       fullWidth
                       InputProps={{
                         readOnly: true,
@@ -148,6 +167,16 @@ const ServiceProvider = () => {
                   <TableCell>
                     <TextField
                       value={serviceProvider.category}
+                      variant="standard"
+                      fullWidth
+                      InputProps={{
+                        readOnly: true,
+                      }}
+                    />
+                  </TableCell>
+                  <TableCell>
+                    <TextField
+                      value={serviceProvider.complains}
                       variant="outlined"
                       fullWidth
                       InputProps={{
@@ -156,12 +185,10 @@ const ServiceProvider = () => {
                     />
                   </TableCell>
                   <TableCell>
-                    {serviceProvider.available ? "Yes" : "No"}
-                  </TableCell>
-                  <TableCell>
-                    <Checkbox
-                      checked={serviceProvider.available}
+                    <Switch
+                      checked={serviceProvider.restrict}
                       onChange={() => handleAvailabilityChange(index)}
+                      color="primary" // Use the color "primary" to match the Material-UI style
                     />
                   </TableCell>
                 </TableRow>
