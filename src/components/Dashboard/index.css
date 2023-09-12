@@ -28,8 +28,6 @@
   margin-top: 80px;
 }
 
-
-
 .ulContent ld {
   margin-right: 20px;
   font-size: 19px;
@@ -43,7 +41,6 @@
 .ulContent li {
   margin-top: 30px;
 }
-
 
 .ulContent .active1 {
   font-size: 25px;
@@ -277,4 +274,11 @@ ld img {
 .service-table {
   margin: 50px 0 0 420px;
   width: 1115px;
+}
+
+.service-search-bar {
+  width: 300px;
+  position: relative;
+  top: 30px;
+  left: 73%;
 }
