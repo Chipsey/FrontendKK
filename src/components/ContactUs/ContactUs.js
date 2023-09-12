@@ -13,18 +13,18 @@ const ContactUs = () => {
       <div className="contact-content">
         <Text
           align="left"
-          style={{ marginTop: 300, fontWeight: 700, fontSize: "50px" }}
+          style={{ marginTop: 230, fontWeight: 700, fontSize: "50px" }}
         >
           CONTACT US
         </Text>
-        <Text align="left" size="md" style={{ marginTop: 10, width: "600px" }}>
+        <Text align="left" size="md" style={{ marginTop: 5, width: "500px" }}>
           Need help with something? Get in touch with our friendly team, and
           we’ll get in touch as soon as possible.
         </Text>
         <form
           action="#"
           method="post"
-          style={{ marginTop: 20, width: "600px" }}
+          style={{ marginTop: 20, width: "500px" }}
         >
           <div style={{ display: "flex", gap: 20 }}>
             <div style={{ flex: 1 }}>
