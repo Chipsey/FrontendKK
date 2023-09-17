@@ -6,6 +6,7 @@
     "@mantine/core": "^6.0.20",
     "@mui/icons-material": "^5.14.8",
     "@mui/material": "^5.14.8",
+    "@mui/styles": "^5.14.9",
     "@nivo/bar": "^0.83.0",
     "@nivo/core": "^0.83.0",
     "@nivo/pie": "^0.83.0",

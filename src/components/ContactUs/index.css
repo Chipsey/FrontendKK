@@ -66,7 +66,6 @@
 }
 
 @media screen and (max-width: 1440px) {
-
   .about-text-wrapper {
     color: #000000;
     font-family: roboto;
@@ -110,5 +109,19 @@
   .contact-content {
     position: relative;
     left: -150px;
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

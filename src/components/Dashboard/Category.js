@@ -1,13 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./index.css";
-import Card from "./Card";
 import Card2 from "./Card-2";
+import Card from "../Category/CCard";
 import DashNavbar from "./DashNavbar";
-import Stat1 from "./Stat1";
-import Stat2 from "./Stat2";
+import { Button, Paper, Typography } from "@mui/material";
 
-const Dashboard = () => {
+const DashCategory = () => {
   return (
     <div className="dashboard">
       <div className="slideBar">
@@ -70,57 +69,50 @@ const Dashboard = () => {
           <Card2 heading="Customer" active="card-2" />
         </Link>
         <Link to="/category">
-          <Card2 heading="Category" active="card-2" />
+          <Card2 heading="Category" active="card-2-active" />
         </Link>
       </div>
-      <div className="cards fade-in">
-        <Card
-          icon="income-icon.png"
-          heading="Income"
-          amount="75000"
-          percentage="10%"
-          icon2="up.png"
-          money="true"
-          dif="+100"
-          date="Today"
-        />
-        <Card
-          icon="profit-icon.png"
-          heading="Profit"
-          amount="51250"
-          percentage="10%"
-          icon2="up.png"
-          money="true"
-          dif="+100"
-          date="Today"
-        />
-        <Card
-          icon="rsp-icon.png"
-          heading="Registered Service Providers"
-          amount="31500"
-          percentage="10%"
-          icon2="up.png"
-          money="false"
-          dif="+100"
-          date="Today"
-        />
-        <Card
-          icon="customers-icon.png"
-          heading="Customers"
-          amount="11300"
-          percentage="10%"
-          money="false"
-          icon2="up.png"
-          dif="+100"
-          date="Today"
-        />
-      </div>
-      <div className="stat fade-in">
-        <Stat1 />
-        <Stat2 />
-      </div>
+      <Paper
+        elevation={0}
+        style={{
+          width: "1014px",
+          margin: "20px 0 0px 350px",
+          padding: "10px",
+          display: "flex",
+          backgroundColor: "#E0E2E7",
+        }}
+      >
+        <Typography variant="h6">Categories</Typography>
+        <Button
+          variant="contained"
+          color="primary"
+          style={{ marginLeft: "auto" }}
+        >
+          Add Category
+        </Button>
+      </Paper>
+      <Paper
+        style={{
+          width: "1014px",
+          margin: "0 0 0px 350px",
+          padding: "10px",
+          display: "flex",
+          flexWrap: "wrap",
+          backgroundColor: "white",
+          maxHeight: "450px",
+          overflowY: "auto",
+        }}
+        elevation={0}
+      >
+        <Card heading="PLUMBING" image="category.png" />
+        <Card heading="CLEANING" image="category.png" />
+        <Card heading="MASONRY" image="category.png" />
+        <Card heading="CARPENTRY" image="category.png" />
+        <Card heading="TEST" image="category.png" />
+        <Card heading="TEST" image="category.png" />
+      </Paper>
     </div>
   );
 };
 
-export default Dashboard;
+export default DashCategory;

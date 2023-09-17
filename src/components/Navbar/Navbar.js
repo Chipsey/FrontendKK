@@ -17,7 +17,7 @@ const Navbar = ({ home, category, contact, about, back_page }) => {
             <div className={home}></div>
           </li>
           <li>
-            <Link to="/category">Category</Link>
+            <Link to="/home-category">Category</Link>
             <div className={category}></div>
           </li>
           <li className="contactUs-link">

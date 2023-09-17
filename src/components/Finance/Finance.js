@@ -2,12 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./index.css";
 import Card from "./Card";
-import Card2 from "./Card-2";
-import DashNavbar from "./DashNavbar";
+import FinanceNavbar from "./FinanceNavbar";
 import Stat1 from "./Stat1";
 import Stat2 from "./Stat2";
 
-const Dashboard = () => {
+const Finance = () => {
   return (
     <div className="dashboard">
       <div className="slideBar">
@@ -15,25 +14,25 @@ const Dashboard = () => {
         <ul className="ulContent">
           <Link to="/dashboard">
             <li>
-              <div className="active--link">
-                <div className="yellow--mark"></div>
+              <ld>
                 <ld>
-                  <ld>
-                    <img src="dashboard--icon1.png" alt="icon" />
-                  </ld>
+                  <img src="dashboard--icon1.png" alt="icon" />
                 </ld>
-                <ld className="active1">Dashboard</ld>
-              </div>
+              </ld>
+              <ld>Dashboard</ld>
             </li>
           </Link>
           <Link to="/finance">
             <li>
-              <ld>
+              <div className="active--link">
+                <div className="yellow--mark"></div>
                 <ld>
-                  <img src="dashboard--icon2.png" alt="icon" />
+                  <ld>
+                    <img src="dashboard--icon2.png" alt="icon" />
+                  </ld>
                 </ld>
-              </ld>
-              <ld>Finance</ld>
+                <ld className="active1">Finance</ld>
+              </div>
             </li>
           </Link>
           <li>
@@ -55,28 +54,17 @@ const Dashboard = () => {
         </ul>
       </div>
       <div className="dashboard-navbar">
-        <DashNavbar
+        <FinanceNavbar
           firstName="Kaveen"
           avatar="Avatar.png"
           name="Kaveen Kalhara"
           role="Manager"
         />
       </div>
-      <div className="cards-2">
-        <Link to="/serviceprovider">
-          <Card2 heading="Service Provider" active="card-2" />
-        </Link>
-        <Link to="/customer">
-          <Card2 heading="Customer" active="card-2" />
-        </Link>
-        <Link to="/category">
-          <Card2 heading="Category" active="card-2" />
-        </Link>
-      </div>
       <div className="cards fade-in">
         <Card
           icon="income-icon.png"
-          heading="Income"
+          heading="Total Income"
           amount="75000"
           percentage="10%"
           icon2="up.png"
@@ -85,8 +73,8 @@ const Dashboard = () => {
           date="Today"
         />
         <Card
-          icon="profit-icon.png"
-          heading="Profit"
+          icon="income-icon.png"
+          heading="This Month Income"
           amount="51250"
           percentage="10%"
           icon2="up.png"
@@ -95,21 +83,21 @@ const Dashboard = () => {
           date="Today"
         />
         <Card
-          icon="rsp-icon.png"
-          heading="Registered Service Providers"
+          icon="income-icon.png"
+          heading="This Week Income"
           amount="31500"
           percentage="10%"
           icon2="up.png"
-          money="false"
+          money="true"
           dif="+100"
           date="Today"
         />
         <Card
-          icon="customers-icon.png"
-          heading="Customers"
+          icon="income-icon.png"
+          heading="Monthly Revenue"
           amount="11300"
           percentage="10%"
-          money="false"
+          money="true"
           icon2="up.png"
           dif="+100"
           date="Today"
@@ -123,4 +111,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Finance;
