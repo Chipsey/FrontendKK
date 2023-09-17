@@ -81,6 +81,7 @@ const DashCategory = () => {
           display: "flex",
           backgroundColor: "white",
         }}
+        className="fade-in"
       >
         <Typography variant="h6">Categories</Typography>
         <Button
@@ -92,6 +93,7 @@ const DashCategory = () => {
         </Button>
       </Paper>
       <Paper
+        className="fade-in"
         style={{
           width: "1014px",
           margin: "0 0 0px 350px",

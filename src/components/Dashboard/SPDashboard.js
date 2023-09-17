@@ -72,7 +72,7 @@ const SPDashboard = (rating) => {
         </Link>
         <Card2 heading="Category" active="card-2" />
       </div>
-      <div className="sp-profile">
+      <div className="sp-profile fade-in">
         <img
           className="sp-img1"
           src="profile-avatar.png"
@@ -87,7 +87,7 @@ const SPDashboard = (rating) => {
           </div>
         </div>
       </div>
-      <div className="sp-reviews">
+      <div className="sp-reviews fade-in">
         <div className="sp-heading">Reviews</div>
         <Review
           avatar="sp-avatar1.png"
@@ -104,7 +104,7 @@ const SPDashboard = (rating) => {
           description="K. Ranathunga is a good man. He is really focusing on his job and performed very well. Actually I should thanks HirePro app to giving me the chance to find the best out of best."
         />
       </div>
-      <div className="sp-complains">
+      <div className="sp-complains fade-in">
         <div className="sp-heading-complains">Complains</div>
         <Complain
           avatar="sp-avatar1.png"

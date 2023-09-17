@@ -160,15 +160,14 @@ const ServiceProvider = () => {
             <TableBody>
               {serviceProviders.map((serviceProvider, index) => (
                 <TableRow key={index}>
-                  <TableCell>
-                    <TextField
-                      value={serviceProvider.name}
-                      variant="standard"
-                      fullWidth
-                      InputProps={{
-                        readOnly: true,
-                      }}
-                    />
+                  <TableCell style={{ textDecoration: "none" }}>
+                    {/* Use the Link component to navigate to the profile */}
+                    <Link
+                      to="/spdashboard"
+                      style={{ textDecoration: "none", color: "black" }}
+                    >
+                      {serviceProvider.name}
+                    </Link>
                   </TableCell>
                   <TableCell>
                     <TextField
