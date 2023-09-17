@@ -15,47 +15,41 @@ import {
   TextField,
 } from "@mui/material";
 
-const ServiceProvider = () => {
+const Customer = () => {
   // Define state to store service provider data
-  const [serviceProviders, setServiceProviders] = useState([
+  const [customers, setCustomer] = useState([
     {
       name: "Yohan Buddhika",
-      category: "Plumbing",
+      status: "Available",
       restrict: true,
-      complains: "2",
     },
     {
       name: "Senuri Wickramasinghe",
-      category: "Gardening",
+      status: "Not Available",
       restrict: false,
-      complains: "2",
     },
     {
       name: "Michelle Fernando",
-      category: "Cleaning",
+      status: "Available",
       restrict: false,
-      complains: "2",
     },
     {
       name: "Kushantha Alwis",
-      category: "Plumbing",
+      status: "Not Available",
       restrict: false,
-      complains: "2",
     },
     {
       name: "Avishka Fernando",
-      category: "Lawn Mowing",
+      status: "Available",
       restrict: false,
-      complains: "2",
     },
   ]);
 
   // Function to handle changes in the "available" status
   const handleAvailabilityChange = (index) => {
-    const updatedServiceProviders = [...serviceProviders];
-    updatedServiceProviders[index].restrict =
-      !updatedServiceProviders[index].restrict;
-    setServiceProviders(updatedServiceProviders);
+    const updatedCustomers = [...customers];
+    updatedCustomers[index].restrict = !updatedCustomers[index].restrict;
+    setCustomer(updatedCustomers);
   };
 
   // Define state to store the search query
@@ -66,7 +60,7 @@ const ServiceProvider = () => {
     setSearchQuery(e.target.value);
   };
 
-  // // Filter service providers based on the search query
+  // Filter service providers based on the search query
   // const filteredServiceProviders = serviceProviders.filter((serviceProvider) =>
   //   serviceProvider.name.toLowerCase().includes(searchQuery.toLowerCase())
   // );
@@ -127,10 +121,10 @@ const ServiceProvider = () => {
       </div>
       <div className="cards-2">
         <Link to="/serviceprovider">
-          <Card2 heading="Service Provider" active="card-2-active" />
+          <Card2 heading="Service Provider" active="card-2" />
         </Link>
         <Link to="/customer">
-          <Card2 heading="Customer" active="card-2" />
+          <Card2 heading="Customer" active="card-2-active" />
         </Link>
         <Link to="/category">
           <Card2 heading="Category" active="card-2" />
@@ -139,7 +133,7 @@ const ServiceProvider = () => {
 
       <div className="service-search-bar fade-in">
         <TextField
-          label="Search Service Providers"
+          label="Search Customers"
           variant="outlined"
           fullWidth
           value={searchQuery} // Set the value to the searchQuery state
@@ -152,17 +146,16 @@ const ServiceProvider = () => {
             <TableHead>
               <TableRow>
                 <TableCell>Name</TableCell>
-                <TableCell>Category</TableCell>
-                <TableCell>Complains</TableCell>
+                <TableCell>Status</TableCell>
                 <TableCell>Restrict User</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {serviceProviders.map((serviceProvider, index) => (
+              {customers.map((customers, index) => (
                 <TableRow key={index}>
                   <TableCell>
                     <TextField
-                      value={serviceProvider.name}
+                      value={customers.name}
                       variant="standard"
                       fullWidth
                       InputProps={{
@@ -172,18 +165,8 @@ const ServiceProvider = () => {
                   </TableCell>
                   <TableCell>
                     <TextField
-                      value={serviceProvider.category}
+                      value={customers.status}
                       variant="standard"
-                      fullWidth
-                      InputProps={{
-                        readOnly: true,
-                      }}
-                    />
-                  </TableCell>
-                  <TableCell>
-                    <TextField
-                      value={serviceProvider.complains}
-                      variant="outlined"
                       fullWidth
                       InputProps={{
                         readOnly: true,
@@ -192,7 +175,7 @@ const ServiceProvider = () => {
                   </TableCell>
                   <TableCell>
                     <Switch
-                      checked={serviceProvider.restrict}
+                      checked={customers.restrict}
                       onChange={() => handleAvailabilityChange(index)}
                       color="secondary"
                     />
@@ -207,4 +190,4 @@ const ServiceProvider = () => {
   );
 };
 
-export default ServiceProvider;
+export default Customer;

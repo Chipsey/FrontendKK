@@ -183,4 +183,81 @@
     width: 100%;
     margin-top: 100px;
   }
+
+  .download-wrapper {
+    margin-top: 50px;
+    color: #000000;
+    font-family: roboto;
+    font-size: 60px;
+    font-weight: 800;
+    left: 0;
+    width: 100%;
+  }
+
+  .download-wrapper2 {
+    color: #d4842b;
+    font-family: roboto;
+    font-size: 60px;
+    margin-left: 30px;
+    font-weight: 800;
+    left: 0;
+    width: 100%;
+  }
+
+  .download-wrapper3 {
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(
+      180deg,
+      rgb(212, 132, 43) 0%,
+      rgb(10.63, 10.63, 10.63) 85.94%
+    );
+    background-clip: text;
+    color: transparent;
+    font-family: roboto;
+    font-size: 60px;
+    font-weight: 800;
+    left: 0;
+    width: 100%;
+  }
+
+  .download-wrapper4 {
+    color: #000000;
+    font-family: roboto;
+    font-size: 16px;
+    margin-top: 5px;
+    letter-spacing: 1px;
+    width: 100%;
+  }
+
+  .download-icons {
+    margin-top: 40px;
+    display: flex;
+  }
+
+  .download-icons .download-logo {
+    width: 150px;
+    height: 150px;
+  }
+
+  .download-icon img {
+    display: block;
+    width: auto;
+    height: 60px;
+    margin-bottom: 20px;
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
