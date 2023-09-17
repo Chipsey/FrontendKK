@@ -79,7 +79,7 @@ const DashCategory = () => {
           margin: "20px 0 0px 350px",
           padding: "10px",
           display: "flex",
-          backgroundColor: "#E0E2E7",
+          backgroundColor: "white",
         }}
       >
         <Typography variant="h6">Categories</Typography>
