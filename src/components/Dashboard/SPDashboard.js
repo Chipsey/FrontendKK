@@ -45,14 +45,16 @@ const SPDashboard = (rating) => {
             </ld>
             <ld>Complaints Box</ld>
           </li>
-          <li>
-            <ld>
+          <Link to="/csr">
+            <li>
               <ld>
-                <img src="dashboard--icon4.png" alt="icon" />
+                <ld>
+                  <img src="dashboard--icon4.png" alt="icon" />
+                </ld>
               </ld>
-            </ld>
-            <ld>CSR</ld>
-          </li>
+              <ld>CSR</ld>
+            </li>
+          </Link>
         </ul>
       </div>
       <div className="dashboard-navbar">

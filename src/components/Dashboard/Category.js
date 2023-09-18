@@ -43,14 +43,16 @@ const DashCategory = () => {
             </ld>
             <ld>Complaints Box</ld>
           </li>
-          <li>
-            <ld>
+          <Link to="/csr">
+            <li>
               <ld>
-                <img src="dashboard--icon4.png" alt="icon" />
+                <ld>
+                  <img src="dashboard--icon4.png" alt="icon" />
+                </ld>
               </ld>
-            </ld>
-            <ld>CSR</ld>
-          </li>
+              <ld>CSR</ld>
+            </li>
+          </Link>
         </ul>
       </div>
       <div className="dashboard-navbar">
@@ -84,13 +86,19 @@ const DashCategory = () => {
         className="fade-in"
       >
         <Typography variant="h6">Categories</Typography>
-        <Button
-          variant="contained"
-          color="primary"
-          style={{ marginLeft: "auto" }}
-        >
-          Add Category
-        </Button>
+        <Link to="/addcategory" style={{ display: "flex", width: "1014px" }}>
+          <Button
+            variant="contained"
+            color="primary"
+            style={{
+              marginLeft: "auto",
+              backgroundColor: "#FFCF70",
+              color: "black",
+            }}
+          >
+            Add Category
+          </Button>
+        </Link>
       </Paper>
       <Paper
         className="fade-in"
@@ -101,7 +109,7 @@ const DashCategory = () => {
           display: "flex",
           flexWrap: "wrap",
           backgroundColor: "white",
-          maxHeight: "450px",
+          maxHeight: "400px",
           overflowY: "auto",
         }}
         elevation={0}

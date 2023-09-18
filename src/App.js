@@ -12,6 +12,9 @@ import Finance from "./components/Finance/Finance";
 import Download from "./components/Home/Download";
 import SPDashboard from "./components/Dashboard/SPDashboard";
 import DashCategory from "./components/Dashboard/Category";
+import AddCategory from "./components/Dashboard/AddCategory";
+import CSR from "./components/CSR/CSR";
+import AddCSR from "./components/CSR/AddCSR";
 
 function App() {
   return (
@@ -29,6 +32,10 @@ function App() {
           <Route exact path="/finance" element={<Finance />} />
           <Route exact path="/spdashboard" element={<SPDashboard />} />
           <Route exact path="/home-category" element={<Category />} />
+          <Route exact path="/addcategory" element={<AddCategory />} />
+          <Route exact path="/csr" element={<CSR />} />
+          <Route exact path="/addcsr" element={<AddCSR />} />
+        
         </Routes>
         <Footer />
       </div>
