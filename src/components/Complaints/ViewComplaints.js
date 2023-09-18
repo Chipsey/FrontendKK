@@ -70,16 +70,14 @@ const AddCSR = () => {
               <ld>Finance</ld>
             </li>
           </Link>
-          <Link to="/complaints">
-            <li>
+          <li>
+            <ld>
               <ld>
-                <ld>
-                  <img src="dashboard--icon3.png" alt="icon" />
-                </ld>
+                <img src="dashboard--icon3.png" alt="icon" />
               </ld>
-              <ld>Complaints</ld>
-            </li>
-          </Link>
+            </ld>
+            <ld>Complaints</ld>
+          </li>
           <Link to="/csr">
             <li>
               <div className="active--link">
@@ -105,7 +103,6 @@ const AddCSR = () => {
       </div>
       <Paper
         elevation={0}
-        className="fade-in"
         style={{
           width: "600px",
           margin: "20px auto",

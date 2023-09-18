@@ -15,6 +15,8 @@ import DashCategory from "./components/Dashboard/Category";
 import AddCategory from "./components/Dashboard/AddCategory";
 import CSR from "./components/CSR/CSR";
 import AddCSR from "./components/CSR/AddCSR";
+import Complaints from "./components/Complaints/Complaints";
+import Complaint from "./components/Complaints/Complaint";
 
 function App() {
   return (
@@ -35,7 +37,8 @@ function App() {
           <Route exact path="/addcategory" element={<AddCategory />} />
           <Route exact path="/csr" element={<CSR />} />
           <Route exact path="/addcsr" element={<AddCSR />} />
-        
+          <Route exact path="/complaints" element={<Complaints />} />
+          <Route exact path="/complaint" element={<Complaint />} />
         </Routes>
         <Footer />
       </div>

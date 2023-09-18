@@ -93,14 +93,16 @@ const Customer = () => {
               <ld>Finance</ld>
             </li>
           </Link>
-          <li>
-            <ld>
+          <Link to="/complaints">
+            <li>
               <ld>
-                <img src="dashboard--icon3.png" alt="icon" />
+                <ld>
+                  <img src="dashboard--icon3.png" alt="icon" />
+                </ld>
               </ld>
-            </ld>
-            <ld>Complaints Box</ld>
-          </li>
+              <ld>Complaints</ld>
+            </li>
+          </Link>
           <Link to="/csr">
             <li>
               <ld>

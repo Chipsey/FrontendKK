@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./index.css";
-import CSRNavbar from "./CSRNavbar";
+import ComplaintsNavbar from "./ComplaintsNavbar";
 import {
   Table,
   TableHead,
@@ -13,55 +13,55 @@ import {
   Button,
 } from "@mui/material";
 
-const CSR = () => {
+const Complaints = () => {
   const tableData = [
     {
-      name: "John Doe",
-      email: "john.doe@example.com",
-      contact: "+1234567890",
-      status: "Active",
+      name: "Complaint 1",
+      description: "This is the description of Complaint 1.",
+      date: "2023-09-15",
+      iscustomer: true,
     },
     {
-      name: "John Doe",
-      email: "john.doe@example.com",
-      contact: "+1234567890",
-      status: "Active",
+      name: "Complaint 2",
+      description: "This is the description of Complaint 2.",
+      date: "2023-09-14",
+      iscustomer: false,
     },
     {
-      name: "John Doe",
-      email: "john.doe@example.com",
-      contact: "+1234567890",
-      status: "Active",
+      name: "Complaint 3",
+      description: "This is the description of Complaint 3.",
+      date: "2023-09-13",
+      iscustomer: true,
     },
     {
-      name: "John Doe",
-      email: "john.doe@example.com",
-      contact: "+1234567890",
-      status: "Active",
+      name: "Complaint 4",
+      description: "This is the description of Complaint 4.",
+      date: "2023-09-12",
+      iscustomer: false,
     },
     {
-      name: "John Doe",
-      email: "john.doe@example.com",
-      contact: "+1234567890",
-      status: "Active",
+      name: "Complaint 5",
+      description: "This is the description of Complaint 5.",
+      date: "2023-09-11",
+      iscustomer: true,
     },
     {
-      name: "Jane Smith",
-      email: "jane.smith@example.com",
-      contact: "+9876543210",
-      status: "Offline",
+      name: "Complaint 6",
+      description: "This is the description of Complaint 6.",
+      date: "2023-09-10",
+      iscustomer: false,
     },
     {
-      name: "Jane Smith",
-      email: "jane.smith@example.com",
-      contact: "+9876543210",
-      status: "Offline",
+      name: "Complaint 7",
+      description: "This is the description of Complaint 7.",
+      date: "2023-09-09",
+      iscustomer: true,
     },
     {
-      name: "Jane Smith",
-      email: "jane.smith@example.com",
-      contact: "+9876543210",
-      status: "Offline",
+      name: "Complaint 8",
+      description: "This is the description of Complaint 8.",
+      date: "2023-09-08",
+      iscustomer: false,
     },
     // Add more data as needed
   ];
@@ -93,38 +93,38 @@ const CSR = () => {
           </Link>
           <Link to="/complaints">
             <li>
-              <ld>
-                <ld>
-                  <img src="dashboard--icon3.png" alt="icon" />
-                </ld>
-              </ld>
-              <ld>Complaints</ld>
-            </li>
-          </Link>
-          <Link to="/csr">
-            <li>
               <div className="active--link">
                 <div className="yellow--mark"></div>
                 <ld>
                   <ld>
-                    <img src="dashboard--icon4.png" alt="icon" />
+                    <img src="dashboard--icon3.png" alt="icon" />
                   </ld>
                 </ld>
-                <ld className="active1">CSR</ld>
+                <ld className="active1">Complaints</ld>
               </div>
+            </li>
+          </Link>
+          <Link to="/csr">
+            <li>
+              <ld>
+                <ld>
+                  <img src="dashboard--icon4.png" alt="icon" />
+                </ld>
+              </ld>
+              <ld>CSR</ld>
             </li>
           </Link>
         </ul>
       </div>
       <div className="dashboard-navbar">
-        <CSRNavbar
+        <ComplaintsNavbar
           firstName="Kaveen"
           avatar="Avatar.png"
           name="Kaveen Kalhara"
           role="Manager"
         />
       </div>
-      <Link to="/addcsr">
+      <Link to="/complaint">
         <Button
           elevation={0}
           variant="contained"
@@ -134,9 +134,20 @@ const CSR = () => {
             color: "black",
           }}
         >
-          Add CSR
+          Customer
         </Button>
       </Link>
+      <Button
+        elevation={0}
+        variant="contained"
+        style={{
+          marginLeft: "20px",
+          backgroundColor: "white",
+          color: "black",
+        }}
+      >
+        Service Provider
+      </Button>
       <Paper
         elevation={0}
         style={{
@@ -153,14 +164,16 @@ const CSR = () => {
           <TableHead>
             <TableRow>
               <TableCell>Name</TableCell>
-              <TableCell>Email</TableCell>
-              <TableCell>Contact</TableCell>
-              <TableCell>Status</TableCell>
+              <TableCell>Description</TableCell>
+              <TableCell>Date</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {tableData.map((row, index) => (
-              <TableRow key={index}>
+              <TableRow
+                key={index}
+                className={row.iscustomer ? "customer-row" : ""}
+              >
                 <TableCell
                   style={{
                     display: "flex",
@@ -171,22 +184,8 @@ const CSR = () => {
                   <Avatar src={`avatar-${index}.png`} alt={row.name} />
                   {row.name}
                 </TableCell>
-                <TableCell>{row.email}</TableCell>
-                <TableCell>{row.contact}</TableCell>
-                <TableCell
-                  className={
-                    row.status === "Active" ? "active-status" : "offline-status"
-                  }
-                >
-                  <span
-                    className={
-                      row.status === "Active"
-                        ? "status-cell-active"
-                        : "status-cell-offline"
-                    }
-                  />
-                  {row.status}
-                </TableCell>
+                <TableCell>{row.description}</TableCell>
+                <TableCell>{row.date}</TableCell>
               </TableRow>
             ))}
           </TableBody>
@@ -196,4 +195,4 @@ const CSR = () => {
   );
 };
 
-export default CSR;
+export default Complaints;
