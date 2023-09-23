@@ -13,7 +13,7 @@ import {
   Button,
 } from "@mui/material";
 
-const Complaints = () => {
+const CSRComplaints = () => {
   const tableData = [
     {
       name: "Complaint 1",
@@ -71,7 +71,7 @@ const Complaints = () => {
       <div className="slideBar">
         <img src="logo.png" alt="logo" className="dashboard--logo" />
         <ul className="ulContent">
-          <Link to="/dashboard">
+          <Link to="/csrdashboard">
             <li>
               <ld>
                 <ld>
@@ -81,17 +81,7 @@ const Complaints = () => {
               <ld>Dashboard</ld>
             </li>
           </Link>
-          <Link to="/finance">
-            <li>
-              <ld>
-                <ld>
-                  <img src="dashboard--icon2.png" alt="icon" />
-                </ld>
-              </ld>
-              <ld>Finance</ld>
-            </li>
-          </Link>
-          <Link to="/complaints">
+          <Link to="/csrcomplaints">
             <li>
               <div className="active--link">
                 <div className="yellow--mark"></div>
@@ -104,7 +94,7 @@ const Complaints = () => {
               </div>
             </li>
           </Link>
-          <Link to="/csr">
+          <Link to="/csruser">
             <li>
               <ld>
                 <ld>
@@ -180,7 +170,7 @@ const Complaints = () => {
                   }}
                 >
                   <Avatar src={`avatar-${index}.png`} alt={row.name} />
-                  <Link to="/complaint">{row.name}</Link>
+                  <Link to="/csrcomplaint">{row.name}</Link>
                 </TableCell>
                 <TableCell>{row.description}</TableCell>
                 <TableCell>{row.date}</TableCell>
@@ -193,4 +183,4 @@ const Complaints = () => {
   );
 };
 
-export default Complaints;
+export default CSRComplaints;
