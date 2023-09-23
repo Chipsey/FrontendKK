@@ -17,6 +17,14 @@ import CSR from "./components/CSR/CSR";
 import AddCSR from "./components/CSR/AddCSR";
 import Complaints from "./components/Complaints/Complaints";
 import Complaint from "./components/Complaints/Complaint";
+import CSRUser from "./components/CSRUser/CSR";
+import CSRDashboard from "./components/CSRDashboard/CSRDashboard";
+import CSRServiceProvider from "./components/CSRDashboard/CSRServiceProvider";
+import CSRCustomer from "./components/CSRDashboard/CSRCustomer";
+import CSRCategory from "./components/CSRDashboard/CSRCategory";
+import CSRAddCategory from "./components/CSRDashboard/CSRAddCategory";
+import CSRComplaints from "./components/CSRComplaints/CSRComplaints";
+import CSRComplaint from "./components/CSRComplaints/Complaint";
 
 function App() {
   return (
@@ -38,7 +46,19 @@ function App() {
           <Route exact path="/csr" element={<CSR />} />
           <Route exact path="/addcsr" element={<AddCSR />} />
           <Route exact path="/complaints" element={<Complaints />} />
+          <Route exact path="/csrcomplaints" element={<CSRComplaints />} />
           <Route exact path="/complaint" element={<Complaint />} />
+          <Route exact path="/csrcomplaint" element={<CSRComplaint />} />
+          <Route exact path="/csruser" element={<CSRUser />} />
+          <Route exact path="/csrdashboard" element={<CSRDashboard />} />
+          <Route
+            exact
+            path="/csrserviceprovider"
+            element={<CSRServiceProvider />}
+          />
+          <Route exact path="/csrcustomer" element={<CSRCustomer />} />
+          <Route exact path="/csrcategory" element={<CSRCategory />} />
+          <Route exact path="/csraddcategory" element={<CSRAddCategory />} />
         </Routes>
         <Footer />
       </div>
