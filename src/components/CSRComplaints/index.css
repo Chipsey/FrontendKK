@@ -593,6 +593,10 @@ ld img {
   .complaint-detail {
     margin: 10px 0 10px 0;
   }
+
+  .reply-section {
+    display: block;
+  }
 }
 
 .fade-in {

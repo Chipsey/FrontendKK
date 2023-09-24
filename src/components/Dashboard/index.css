@@ -564,7 +564,7 @@ ld img {
     left: 350px;
   }
 
-  .sp-profile {
+.sp-profile {
     position: relative;
     left: 400px;
     display: flex;

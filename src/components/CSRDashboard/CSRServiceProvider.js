@@ -76,7 +76,7 @@ const CSRServiceProvider = () => {
       <div className="slideBar">
         <img src="logo.png" alt="logo" className="dashboard--logo" />
         <ul className="ulContent">
-          <Link to="/dashboard">
+          <Link to="/csrdashboard">
             <li>
               <div className="active--link">
                 <div className="yellow--mark"></div>
@@ -89,7 +89,7 @@ const CSRServiceProvider = () => {
               </div>
             </li>
           </Link>
-          <Link to="/complaints">
+          <Link to="/csrcomplaints">
             <li>
               <ld>
                 <ld>
