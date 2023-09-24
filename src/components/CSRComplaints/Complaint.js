@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./index.css";
 import ComplaintsNavbar from "./ComplaintsNavbar";
-import { Paper, Button, Typography, Divider } from "@mui/material";
+import { Paper, Button, Typography, Divider, TextField } from "@mui/material";
 
 const CSRComplaint = () => {
   // Sample data for a single complaint
@@ -11,6 +11,20 @@ const CSRComplaint = () => {
     complaintAgainst: "Person Name",
     description: "This is the description of the complaint.",
     date: "2023-09-15",
+    reply: "Reply",
+  };
+
+  const [reply, setReply] = useState(""); // State for the reply input
+
+  const handleReplyChange = (event) => {
+    setReply(event.target.value);
+  };
+
+  const handleSendReply = () => {
+    // You can handle sending the reply here
+    // For now, we'll just log the reply to the console
+    console.log("Reply:", reply);
+    setReply(""); // Clear the input field after sending
   };
 
   return (
@@ -89,27 +103,53 @@ const CSRComplaint = () => {
           <div className="complaint-detail">
             <strong>Date:</strong> {complaintData.date}
           </div>
+          <div className="complaint-detail">
+            <strong>Reply:</strong> {reply}
+          </div>
           <div className="complaint-buttons" style={{ display: "flex" }}>
-            <Link to="/csrcomplaints">
+            <div className="reply-section">
+              {/* Input field for reply */}
+              <TextField
+                label="Reply"
+                variant="outlined"
+                fullWidth
+                multiline
+                rows={1}
+                value={reply}
+                onChange={handleReplyChange}
+                style={{ margin: "10px 0" }}
+              />
+              {/* Button to send reply */}
               <Button
                 variant="contained"
                 color="primary"
                 className="complaint-button"
+                onClick={handleSendReply}
                 style={{ marginRight: 20, backgroundColor: "black" }}
               >
-                View Task Details
+                Send Reply
               </Button>
-            </Link>
-            <Link to="/csrcomplaints">
-              <Button
-                variant="contained"
-                color="secondary"
-                className="complaint-button"
-                style={{ backgroundColor: "#FFCF70", color: "black" }}
-              >
-                Back
-              </Button>
-            </Link>
+              <Link to="/csrcomplaints">
+                <Button
+                  variant="contained"
+                  color="primary"
+                  className="complaint-button"
+                  style={{ marginRight: 20, backgroundColor: "black" }}
+                >
+                  View Task Details
+                </Button>
+              </Link>
+              <Link to="/csrcomplaints">
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  className="complaint-button"
+                  style={{ backgroundColor: "#FFCF70", color: "black" }}
+                >
+                  Back
+                </Button>
+              </Link>
+            </div>
           </div>
         </Paper>
       </div>

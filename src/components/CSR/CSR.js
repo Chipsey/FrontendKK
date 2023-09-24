@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./index.css";
 import CSRNavbar from "./CSRNavbar";
@@ -11,10 +11,16 @@ import {
   Paper,
   Avatar,
   Button,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  IconButton,
 } from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete"; // Import the DeleteIcon
 
 const CSR = () => {
-  const tableData = [
+  const [tableData, setTableData] = useState([
     {
       name: "John Doe",
       email: "john.doe@example.com",
@@ -46,25 +52,40 @@ const CSR = () => {
       status: "Active",
     },
     {
-      name: "Jane Smith",
-      email: "jane.smith@example.com",
-      contact: "+9876543210",
-      status: "Offline",
+      name: "John Doe",
+      email: "john.doe@example.com",
+      contact: "+1234567890",
+      status: "Active",
     },
     {
-      name: "Jane Smith",
-      email: "jane.smith@example.com",
-      contact: "+9876543210",
-      status: "Offline",
-    },
-    {
-      name: "Jane Smith",
-      email: "jane.smith@example.com",
-      contact: "+9876543210",
-      status: "Offline",
+      name: "John Doe",
+      email: "john.doe@example.com",
+      contact: "+1234567890",
+      status: "Active",
     },
     // Add more data as needed
-  ];
+  ]);
+
+  const [confirmationDialogOpen, setConfirmationDialogOpen] = useState(false);
+  const [deleteRowIndex, setDeleteRowIndex] = useState(null);
+
+  const handleDeleteClick = (index) => {
+    setDeleteRowIndex(index);
+    setConfirmationDialogOpen(true);
+  };
+
+  const handleConfirmDelete = () => {
+    const updatedData = [...tableData];
+    updatedData.splice(deleteRowIndex, 1);
+    setTableData(updatedData);
+    setDeleteRowIndex(null);
+    setConfirmationDialogOpen(false);
+  };
+
+  const handleCancelDelete = () => {
+    setDeleteRowIndex(null);
+    setConfirmationDialogOpen(false);
+  };
 
   return (
     <div className="dashboard">
@@ -156,6 +177,7 @@ const CSR = () => {
               <TableCell>Email</TableCell>
               <TableCell>Contact</TableCell>
               <TableCell>Status</TableCell>
+              <TableCell>Delete</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -187,11 +209,40 @@ const CSR = () => {
                   />
                   {row.status}
                 </TableCell>
+                <TableCell>
+                  <IconButton
+                    aria-label="delete"
+                    onClick={() => handleDeleteClick(index)}
+                  >
+                    <DeleteIcon color="error" />
+                  </IconButton>
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
         </Table>
       </Paper>
+
+      {/* Delete Confirmation Dialog */}
+      <Dialog
+        open={confirmationDialogOpen}
+        onClose={handleCancelDelete}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">Confirm Deletion</DialogTitle>
+        <DialogContent>
+          Are you sure you want to delete this record?
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCancelDelete} color="primary">
+            Cancel
+          </Button>
+          <Button onClick={handleConfirmDelete} color="primary" autoFocus>
+            Delete
+          </Button>
+        </DialogActions>
+      </Dialog>
     </div>
   );
 };

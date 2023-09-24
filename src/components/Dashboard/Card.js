@@ -19,14 +19,14 @@ const Card = ({
         <div className="card-heading-wording">{heading}</div>
       </div>
       <div className="card-amount">
-        {money === "true" ? "$" : ""}
+        {money === "true" ? "LKR " : ""}
         <CountUp start={0} end={parseFloat(amount)} duration={2} />
       </div>
       <div className="card-footer">
         <div className="card-percentage">{percentage}</div>
         <img src={icon2} alt="gain" />
         <div className="card-dif">
-          {money === "true" ? "$" : ""}
+          {money === "true" ? "LKR " : ""}
           <CountUp start={0} end={parseFloat(dif)} duration={1} />
         </div>
         <div className="card-day">{date}</div>

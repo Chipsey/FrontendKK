@@ -136,6 +136,17 @@ const CSRComplaints = () => {
       >
         Service Provider
       </Button>
+      <Button
+        elevation={0}
+        variant="contained"
+        style={{
+          marginLeft: "20px",
+          backgroundColor: "gray",
+          color: "white",
+        }}
+      >
+        Solved
+      </Button>
       <Paper
         elevation={0}
         style={{
