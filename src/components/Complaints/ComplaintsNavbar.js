@@ -1,4 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import PowerSettingsNewIcon from "@mui/icons-material/PowerSettingsNew";
+
 import "./index.css";
 
 const ComplaintsNavbar = ({ firstName, avatar, name, role }) => {
@@ -17,6 +20,9 @@ const ComplaintsNavbar = ({ firstName, avatar, name, role }) => {
           src="Icon-notification.png"
           alt="CardIcon"
         />
+        <Link to="/login">
+          <PowerSettingsNewIcon />
+        </Link>
         <div className="dash-nav-avatar">
           <img className="dash-nav-avatar-img" src={avatar} alt="avatar" />
           <div>

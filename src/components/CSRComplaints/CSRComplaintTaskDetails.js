@@ -4,13 +4,15 @@ import "./index.css";
 import ComplaintsNavbar from "./ComplaintsNavbar";
 import { Paper, Button, Typography, Divider } from "@mui/material";
 
-const Complaint = () => {
+const CSRComplaintTaskDetails = () => {
   // Sample data for a single complaint
-  const complaintData = {
-    customer: "Customer Name",
-    complaintAgainst: "Person Name",
+  const taskData = {
+    task: "Task Name",
+    where: "Location Name",
+    when: "2023-09-15",
     description: "This is the description of the complaint.",
-    date: "2023-09-15",
+    goods: "Yes",
+    price: "7500",
   };
 
   return (
@@ -26,16 +28,6 @@ const Complaint = () => {
                 </ld>
               </ld>
               <ld>Dashboard</ld>
-            </li>
-          </Link>
-          <Link to="/finance">
-            <li>
-              <ld>
-                <ld>
-                  <img src="dashboard--icon2.png" alt="icon" />
-                </ld>
-              </ld>
-              <ld>Finance</ld>
             </li>
           </Link>
           <Link to="/complaints">
@@ -58,7 +50,7 @@ const Complaint = () => {
                   <img src="dashboard--icon4.png" alt="icon" />
                 </ld>
               </ld>
-              <ld>CSR</ld>
+              <ld>Category Review</ld>
             </li>
           </Link>
         </ul>
@@ -84,33 +76,29 @@ const Complaint = () => {
           }}
         >
           <Typography variant="h5" align="center">
-            Complaint Details
+            Task Details
           </Typography>
           <Divider />
           <div className="complaint-detail">
-            <strong>Customer:</strong> {complaintData.customer}
+            <strong>Task:</strong> {taskData.task}
           </div>
           <div className="complaint-detail">
-            <strong>Complaint Against:</strong> {complaintData.complaintAgainst}
+            <strong>Where:</strong> {taskData.where}
           </div>
           <div className="complaint-detail">
-            <strong>Description:</strong> {complaintData.description}
+            <strong>When:</strong> {taskData.when}
           </div>
           <div className="complaint-detail">
-            <strong>Date:</strong> {complaintData.date}
+            <strong>Description:</strong> {taskData.description}
+          </div>
+          <div className="complaint-detail">
+            <strong>Goods Provided:</strong> {taskData.goods}
+          </div>
+          <div className="complaint-detail">
+            <strong>Price:</strong> {taskData.price}
           </div>
           <div className="complaint-buttons" style={{ display: "flex" }}>
-            <Link to="/complainttd">
-              <Button
-                variant="contained"
-                color="primary"
-                className="complaint-button"
-                style={{ marginRight: 20, backgroundColor: "#FFCF70", color: "black" }}
-              >
-                View Task Details
-              </Button>
-            </Link>
-            <Link to="/complaints">
+            <Link to="/csrcomplaint">
               <Button
                 variant="contained"
                 color="secondary"
@@ -127,4 +115,4 @@ const Complaint = () => {
   );
 };
 
-export default Complaint;
+export default CSRComplaintTaskDetails;

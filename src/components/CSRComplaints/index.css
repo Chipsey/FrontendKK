@@ -489,6 +489,7 @@ ld img {
   .dash-nav-avatar {
     display: flex;
     width: 200px;
+    align-items: center;
     gap: 15px;
   }
 

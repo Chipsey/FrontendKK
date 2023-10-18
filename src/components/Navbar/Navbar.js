@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 import "./index.css";
 
 const Navbar = ({ home, category, contact, about, back_page }) => {
@@ -25,6 +26,7 @@ const Navbar = ({ home, category, contact, about, back_page }) => {
             <div className={contact}></div>
           </li>
           <li>
+
             <Link to="/about">About</Link>
             <div className={about}></div>
           </li>
