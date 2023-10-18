@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./index.css";
 import CSRNavbar from "./CSRNavbar";
@@ -9,61 +10,73 @@ import {
   TableCell,
   TableRow,
   Paper,
+  TextField,
   Avatar,
+  Checkbox,
 } from "@mui/material";
 
 const CSRUser = () => {
-  const tableData = [
+  const [tableData, setTableData] = useState([
     {
       name: "John Doe",
-      email: "john.doe@example.com",
-      contact: "+1234567890",
-      status: "Active",
+      category: "john.doe@example.com",
+      qualifications: "+1234567890",
+      approval: true,
     },
     {
       name: "John Doe",
-      email: "john.doe@example.com",
-      contact: "+1234567890",
-      status: "Active",
+      category: "john.doe@example.com",
+      qualifications: "+1234567890",
+      approval: false,
     },
     {
       name: "John Doe",
-      email: "john.doe@example.com",
-      contact: "+1234567890",
-      status: "Active",
+      category: "john.doe@example.com",
+      qualifications: "+1234567890",
+      approval: false,
     },
     {
       name: "John Doe",
-      email: "john.doe@example.com",
-      contact: "+1234567890",
-      status: "Active",
+      category: "john.doe@example.com",
+      qualifications: "+1234567890",
+      approval: true,
     },
     {
       name: "John Doe",
-      email: "john.doe@example.com",
-      contact: "+1234567890",
-      status: "Active",
+      category: "john.doe@example.com",
+      qualifications: "+1234567890",
+      approval: false,
     },
     {
       name: "Jane Smith",
-      email: "jane.smith@example.com",
-      contact: "+9876543210",
-      status: "Offline",
+      category: "jane.smith@example.com",
+      qualifications: "+9876543210",
+      approval: true,
     },
     {
       name: "Jane Smith",
-      email: "jane.smith@example.com",
-      contact: "+9876543210",
-      status: "Offline",
+      category: "jane.smith@example.com",
+      qualifications: "+9876543210",
+      approval: false,
     },
     {
       name: "Jane Smith",
-      email: "jane.smith@example.com",
-      contact: "+9876543210",
-      status: "Offline",
+      category: "jane.smith@example.com",
+      qualifications: "+9876543210",
+      approval: false,
     },
     // Add more data as needed
-  ];
+  ]);
+
+  const handleCheckboxChange = (index) => {
+    const updatedData = [...tableData];
+    updatedData[index].checked = !updatedData[index].checked;
+    setTableData(updatedData);
+  };
+  const [searchQuery, setSearchQuery] = useState("");
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
 
   return (
     <div className="dashboard">
@@ -99,7 +112,7 @@ const CSRUser = () => {
                     <img src="dashboard--icon4.png" alt="icon" />
                   </ld>
                 </ld>
-                <ld className="active1">CSR</ld>
+                <ld className="active1">Category Review</ld>
               </div>
             </li>
           </Link>
@@ -111,6 +124,16 @@ const CSRUser = () => {
           avatar="Avatar.png"
           name="Kaveen Kalhara"
           role="Manager"
+        />
+      </div>
+      <div className="service-search-bar fade-in">
+        <TextField
+          label="Search"
+          variant="outlined"
+          fullWidth
+          style={{marginBottom:"30px"}}
+          value={searchQuery} // Set the value to the searchQuery state
+          onChange={handleSearchChange} // Handle changes in the search input
         />
       </div>
       <Paper
@@ -129,9 +152,9 @@ const CSRUser = () => {
           <TableHead>
             <TableRow>
               <TableCell>Name</TableCell>
-              <TableCell>Email</TableCell>
-              <TableCell>Contact</TableCell>
-              <TableCell>Status</TableCell>
+              <TableCell>Category</TableCell>
+              <TableCell>Qualifications</TableCell>
+              <TableCell>Approval</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -147,21 +170,27 @@ const CSRUser = () => {
                   <Avatar src={`avatar-${index}.png`} alt={row.name} />
                   {row.name}
                 </TableCell>
-                <TableCell>{row.email}</TableCell>
-                <TableCell>{row.contact}</TableCell>
+                <TableCell>{row.category}</TableCell>
+                <TableCell>{row.qualifications}</TableCell>
                 <TableCell
                   className={
-                    row.status === "Active" ? "active-status" : "offline-status"
+                    row.approval === "Active"
+                      ? "active-approval"
+                      : "offline-approval"
                   }
                 >
+                  <Checkbox
+                    checked={row.checked}
+                    onChange={() => handleCheckboxChange(index)}
+                  />
                   <span
                     className={
-                      row.status === "Active"
-                        ? "status-cell-active"
-                        : "status-cell-offline"
+                      row.approval === "Active"
+                        ? "approval-cell-active"
+                        : "approval-cell-offline"
                     }
                   />
-                  {row.status}
+                  {row.approval}
                 </TableCell>
               </TableRow>
             ))}

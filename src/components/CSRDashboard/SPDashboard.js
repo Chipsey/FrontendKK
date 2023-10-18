@@ -54,7 +54,7 @@ const SPDashboard = (rating) => {
                   <img src="dashboard--icon4.png" alt="icon" />
                 </ld>
               </ld>
-              <ld>CSR</ld>
+              <ld>Review</ld>
             </li>
           </Link>
         </ul>

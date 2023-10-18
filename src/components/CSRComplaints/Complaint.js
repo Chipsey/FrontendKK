@@ -62,7 +62,7 @@ const CSRComplaint = () => {
                   <img src="dashboard--icon4.png" alt="icon" />
                 </ld>
               </ld>
-              <ld>CSR</ld>
+              <ld>Category Review</ld>
             </li>
           </Link>
         </ul>
@@ -125,16 +125,24 @@ const CSRComplaint = () => {
                 color="primary"
                 className="complaint-button"
                 onClick={handleSendReply}
-                style={{ marginRight: 20, backgroundColor: "black" }}
+                style={{
+                  marginRight: 20,
+                  backgroundColor: "#FFCF70",
+                  color: "black",
+                }}
               >
                 Send Reply
               </Button>
-              <Link to="/csrcomplaints">
+              <Link to="/csrcomplainttd">
                 <Button
                   variant="contained"
                   color="primary"
                   className="complaint-button"
-                  style={{ marginRight: 20, backgroundColor: "black" }}
+                  style={{
+                    marginRight: 20,
+                    backgroundColor: "#FFCF70",
+                    color: "black",
+                  }}
                 >
                   View Task Details
                 </Button>

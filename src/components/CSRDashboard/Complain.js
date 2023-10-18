@@ -7,7 +7,7 @@ import Paper from "@mui/material/Paper";
 import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles((theme) => ({
-  review: {
+  Review: {
     display: "flex",
     alignItems: "left",
     padding: 20,

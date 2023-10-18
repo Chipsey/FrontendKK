@@ -3,9 +3,14 @@ import { Link } from "react-router-dom";
 import "./index.css";
 import Card2 from "./Card-2";
 import DashNavbar from "./DashNavbar";
-import { Switch } from "@mui/material";
 
 import {
+  Switch,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  Button,
   Table,
   TableBody,
   TableCell,
@@ -21,7 +26,7 @@ const ServiceProvider = () => {
     {
       name: "Yohan Buddhika",
       category: "Plumbing",
-      restrict: true,
+      restrict: false,
       complains: "2",
     },
     {
@@ -64,6 +69,32 @@ const ServiceProvider = () => {
   // Function to handle changes in the search input
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
+  };
+
+  // Define state for the confirmation dialog
+  const [isConfirmationDialogOpen, setConfirmationDialogOpen] = useState(false);
+  const [selectedServiceProviderIndex, setSelectedServiceProviderIndex] =
+    useState(null);
+
+  // Function to open the confirmation dialog
+  const openConfirmationDialog = (index) => {
+    setSelectedServiceProviderIndex(index);
+    setConfirmationDialogOpen(true);
+  };
+
+  // Function to close the confirmation dialog
+  const closeConfirmationDialog = () => {
+    setSelectedServiceProviderIndex(null);
+    setConfirmationDialogOpen(false);
+  };
+
+  // Function to handle the confirmation and restrict user
+  const handleConfirmRestrict = () => {
+    if (selectedServiceProviderIndex !== null) {
+      // Handle the restriction here (update state, send a request to the server, etc.)
+      handleAvailabilityChange(selectedServiceProviderIndex);
+      closeConfirmationDialog();
+    }
   };
 
   // // Filter service providers based on the search query
@@ -196,7 +227,7 @@ const ServiceProvider = () => {
                   <TableCell>
                     <Switch
                       checked={serviceProvider.restrict}
-                      onChange={() => handleAvailabilityChange(index)}
+                      onChange={() => openConfirmationDialog(index)}
                       color="secondary"
                     />
                   </TableCell>
@@ -206,6 +237,25 @@ const ServiceProvider = () => {
           </Table>
         </TableContainer>
       </div>
+      <Dialog
+        open={isConfirmationDialogOpen}
+        onClose={closeConfirmationDialog}
+        fullWidth
+        maxWidth="xs"
+      >
+        <DialogTitle>Confirm Restriction</DialogTitle>
+        <DialogContent>
+          Are you sure you want to restrict this user?
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={closeConfirmationDialog} color="primary">
+            Cancel
+          </Button>
+          <Button onClick={handleConfirmRestrict} color="primary">
+            Confirm
+          </Button>
+        </DialogActions>
+      </Dialog>
     </div>
   );
 };

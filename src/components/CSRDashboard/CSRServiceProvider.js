@@ -106,7 +106,7 @@ const CSRServiceProvider = () => {
                   <img src="dashboard--icon4.png" alt="icon" />
                 </ld>
               </ld>
-              <ld>CSR</ld>
+              <ld>Category Review</ld>
             </li>
           </Link>
         </ul>
@@ -119,7 +119,7 @@ const CSRServiceProvider = () => {
           role="Manager"
         />
       </div>
-      <div className="cards-2">
+\      <div className="cards-2">
         <Link to="/csrserviceprovider">
           <Card2 heading="Service Provider" active="card-2-active" />
         </Link>
@@ -130,7 +130,6 @@ const CSRServiceProvider = () => {
           <Card2 heading="Category" active="card-2" />
         </Link>
       </div>
-
       <div className="service-search-bar fade-in">
         <TextField
           label="Search Service Providers"

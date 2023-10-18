@@ -34,6 +34,7 @@ const ContactUs = () => {
                   id="first_name"
                   name="first_name"
                   required
+                  style={{ margin: "5px" }}
                 />
               </div>
               <div style={{ flex: 1 }}>
@@ -42,6 +43,7 @@ const ContactUs = () => {
                   id="last_name"
                   name="last_name"
                   required
+                  style={{ margin: "5px" }}
                 />
               </div>
             </div>
@@ -51,6 +53,7 @@ const ContactUs = () => {
                 id="email"
                 name="email"
                 type="email"
+                style={{ margin: "5px" }}
                 required
               />
             </div>
@@ -60,6 +63,7 @@ const ContactUs = () => {
                 id="phone"
                 name="phone"
                 type="tel"
+                style={{ margin: "5px" }}
                 required
               />
             </div>
@@ -68,11 +72,21 @@ const ContactUs = () => {
                 placeholder="Message"
                 id="message"
                 name="message"
+                style={{ margin: "5px" }}
                 required
               />
             </div>
             <div>
-              <Button type="submit" variant="filled" color="blue">
+              <Button
+                type="submit"
+                variant="filled"
+                color="blue"
+                style={{
+                  margin: "5px",
+                  backgroundColor: "#FFCF70",
+                  color: "black",
+                }}
+              >
                 Send Message
               </Button>
             </div>

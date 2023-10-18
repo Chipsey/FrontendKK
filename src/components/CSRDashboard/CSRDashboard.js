@@ -43,7 +43,7 @@ const CSRDashboard = () => {
                   <img src="dashboard--icon4.png" alt="icon" />
                 </ld>
               </ld>
-              <ld>CSR</ld>
+              <ld>Category Review</ld>
             </li>
           </Link>
         </ul>
@@ -66,48 +66,6 @@ const CSRDashboard = () => {
         <Link to="/csrcategory">
           <Card2 heading="Category" active="card-2" />
         </Link>
-      </div>
-      <div className="cards fade-in">
-        <Card
-          icon="income-icon.png"
-          heading="Income"
-          amount="75000"
-          percentage="10%"
-          icon2="up.png"
-          money="true"
-          dif="+100"
-          date="Today"
-        />
-        <Card
-          icon="profit-icon.png"
-          heading="Profit"
-          amount="51250"
-          percentage="10%"
-          icon2="up.png"
-          money="true"
-          dif="+100"
-          date="Today"
-        />
-        <Card
-          icon="rsp-icon.png"
-          heading="Registered Service Providers"
-          amount="31500"
-          percentage="10%"
-          icon2="up.png"
-          money="false"
-          dif="+100"
-          date="Today"
-        />
-        <Card
-          icon="customers-icon.png"
-          heading="Customers"
-          amount="11300"
-          percentage="10%"
-          money="false"
-          icon2="up.png"
-          dif="+100"
-          date="Today"
-        />
       </div>
       <div className="stat fade-in">
         <Stat1 />

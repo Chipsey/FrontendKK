@@ -42,7 +42,7 @@ const CSRCategory = () => {
                   <img src="dashboard--icon4.png" alt="icon" />
                 </ld>
               </ld>
-              <ld>CSR</ld>
+              <ld>Category Review</ld>
             </li>
           </Link>
         </ul>

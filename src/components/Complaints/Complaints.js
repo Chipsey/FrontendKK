@@ -25,7 +25,7 @@ const Complaints = () => {
       name: "Complaint 2",
       description: "This is the description of Complaint 2.",
       date: "2023-09-14",
-      iscustomer: false,
+      iscustomer: true,
     },
     {
       name: "Complaint 3",
